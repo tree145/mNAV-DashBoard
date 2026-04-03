@@ -23,6 +23,8 @@ jobs:
           pip install requests
       
       - name: Run the scraping script
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
         run: python extract_mnav.py
       
       - name: Commit and push changes
